@@ -143,20 +143,20 @@ export default function SectionNine() {
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative min-h-[520px] overflow-hidden border border-[#8c6b45]/30 bg-[#d8c7a7] p-2 sm:min-h-[600px]"
+            className="relative min-h-130 overflow-hidden border border-[#8c6b45]/30 bg-[#d8c7a7] p-2 sm:min-h-150"
           >
             {/* Map frame */}
-            <div className="relative h-full min-h-[504px] overflow-hidden border border-[#8c6b45]/25 sm:min-h-[584px]">
+            <div className="relative h-full min-h-126 overflow-hidden border border-[#8c6b45]/25 sm:min-h-146">
               <iframe
                 src="https://maps.google.com/maps?q=18.477260,73.923824&z=15&output=embed"
                 title="Kalpataru Cultural Association location"
-                className="absolute inset-0 h-full w-full border-0 grayscale-[25%] sepia-[12%]"
+                className="absolute inset-0 h-full w-full border-0 grayscale-25 sepia-12"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
 
               {/* Gentle map treatment */}
-              <div className="pointer-events-none absolute inset-0 bg-[#8c6b45]/[0.06] mix-blend-multiply" />
+              <div className="pointer-events-none absolute inset-0 bg-[#8c6b45]/6 mix-blend-multiply" />
 
               {/* Corner label */}
               <div className="absolute left-5 top-5 border border-[#8c6b45]/30 bg-[#f5e8ce]/90 px-4 py-3 backdrop-blur-sm">
