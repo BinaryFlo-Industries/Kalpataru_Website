@@ -11,9 +11,9 @@ const SectionOne = () => {
       className="relative h-dvh min-h-170 w-full overflow-hidden bg-[#1b0d0d]"
     >
       {/* =========================================================
-          BACKGROUND VIDEO
-      ========================================================== */}
-
+BACKGROUND VIDEO
+========================================================== */}
+      ```
       <video
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
@@ -25,68 +25,60 @@ const SectionOne = () => {
       >
         <source src="/videos/main.mp4" type="video/mp4" />
       </video>
-
       {/* =========================================================
-          CINEMATIC OVERLAYS
-      ========================================================== */}
-
+      CINEMATIC OVERLAYS
+  ========================================================== */}
       {/* Overall darkening */}
       <div className="absolute inset-0 bg-black/30" />
-
       {/* Warm Bengal tone */}
       <div className="absolute inset-0 bg-[#3b1111]/20 mix-blend-multiply" />
-
       {/* Top gradient — protects the navbar visually */}
       <div
         className="
-          absolute inset-x-0 top-0 h-52
-          bg-linear-to-b
-          from-black/45
-          via-black/15
-          to-transparent
-        "
+      absolute inset-x-0 top-0 h-52
+      bg-linear-to-b
+      from-black/45
+      via-black/15
+      to-transparent
+    "
       />
-
       {/* Bottom cinematic gradient */}
       <div
         className="
-          absolute inset-x-0 bottom-0 h-[55%]
-          bg-linear-to-t
-          from-[#180909]/80
-          via-[#180909]/30
-          to-transparent
-        "
+      absolute inset-x-0 bottom-0 h-[55%]
+      bg-linear-to-t
+      from-[#180909]/80
+      via-[#180909]/30
+      to-transparent
+    "
       />
-
       {/* Very subtle warm glow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.35 }}
         transition={{ duration: 2 }}
         className="
-          pointer-events-none absolute
-          -bottom-40 left-1/2
-          h-125 w-175
-          -translate-x-1/2
-          rounded-full
-          bg-[#c49a63]/20
-          blur-[120px]
-        "
+      pointer-events-none absolute
+      -bottom-40 left-1/2
+      h-125 w-175
+      -translate-x-1/2
+      rounded-full
+      bg-[#c49a63]/20
+      blur-[120px]
+    "
       />
-
       {/* =========================================================
-          HERO CONTENT
-      ========================================================== */}
-
+      HERO CONTENT
+  ========================================================== */}
       <div className="relative z-10 flex h-full w-full flex-col">
         {/* Main copy */}
         <div
           className="
-            mx-auto flex w-full max-w-7xl flex-1
-            items-end px-6 pb-36
-            sm:px-10
-            lg:px-14 lg:pb-32
-          "
+        mx-auto flex w-full max-w-7xl flex-1
+        items-end px-6 pb-72
+        sm:px-10 sm:pb-80
+        lg:px-14 lg:pb-32
+      "
         >
           <motion.div
             initial={{
@@ -118,11 +110,11 @@ const SectionOne = () => {
 
               <span
                 className="
-                  text-[10px] font-medium uppercase
-                  tracking-[0.32em]
-                  text-[#f2dfbd]
-                  sm:text-xs
-                "
+              text-[10px] font-medium uppercase
+              tracking-[0.32em]
+              text-[#f2dfbd]
+              sm:text-xs
+            "
               >
                 A celebration of culture
               </span>
@@ -131,15 +123,15 @@ const SectionOne = () => {
             {/* Main heading */}
             <h1
               className="
-                max-w-3xl
-                text-5xl font-medium
-                leading-[0.95]
-                tracking-[-0.035em]
-                text-[#fff8ed]
-                sm:text-6xl
-                md:text-7xl
-                lg:text-[5.8rem]
-              "
+            max-w-3xl
+            text-5xl font-medium
+            leading-[0.95]
+            tracking-[-0.035em]
+            text-[#fff8ed]
+            sm:text-6xl
+            md:text-7xl
+            lg:text-[5.8rem]
+          "
             >
               Where Bengal
               <br />
@@ -156,11 +148,11 @@ const SectionOne = () => {
                 delay: 0.7,
               }}
               className="
-                mt-6 max-w-xl
-                text-sm leading-6
-                text-white/75
-                sm:text-base sm:leading-7
-              "
+            mt-6 max-w-xl
+            text-sm leading-6
+            text-white/75
+            sm:text-base sm:leading-7
+          "
             >
               Celebrating the heritage, artistry and spirit of Bengal — bringing
               our community together across generations.
@@ -169,8 +161,8 @@ const SectionOne = () => {
         </div>
 
         {/* =======================================================
-            DURGA PUJA CTA
-        ======================================================== */}
+        DURGA PUJA CTA
+    ======================================================== */}
 
         <motion.div
           initial={{
@@ -187,53 +179,64 @@ const SectionOne = () => {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
-            absolute
-            bottom-24 right-6
-            sm:right-10
-            lg:bottom-28 lg:right-14
-          "
+        absolute
+        bottom-24 left-1/2
+        w-[calc(100%-3rem)]
+        max-w-75
+        -translate-x-1/2
+
+        sm:bottom-24
+
+        lg:bottom-28
+        lg:left-auto
+        lg:right-14
+        lg:w-auto
+        lg:max-w-none
+        lg:translate-x-0
+      "
         >
           <Link
             href="/events/durga-puja"
             className="
-              group relative block
-              w-67.5
-              overflow-hidden
-              rounded-3xl
-              border border-white/20
-              bg-[#321313]/55
-              p-5
-              shadow-[0_20px_70px_rgba(0,0,0,0.25)]
-              backdrop-blur-xl
-              transition-all duration-500
-              hover:-translate-y-1
-              hover:border-[#d9b77c]/45
-              hover:bg-[#321313]/70
-              sm:w-75
-            "
+          group relative block
+          w-full
+          overflow-hidden
+          rounded-3xl
+          border border-white/20
+          bg-[#321313]/55
+          p-5
+          shadow-[0_20px_70px_rgba(0,0,0,0.25)]
+          backdrop-blur-xl
+          transition-all duration-500
+          hover:-translate-y-1
+          hover:border-[#d9b77c]/45
+          hover:bg-[#321313]/70
+
+          lg:w-75
+        "
           >
             {/* Decorative glow */}
             <div
               className="
-                pointer-events-none absolute
-                -right-12 -top-12
-                h-28 w-28
-                rounded-full
-                bg-[#d9b77c]/15
-                blur-3xl
-                transition-all duration-700
-                group-hover:bg-[#d9b77c]/25
-              "
+            pointer-events-none absolute
+            -right-12 -top-12
+            h-28 w-28
+            rounded-full
+            bg-[#d9b77c]/15
+            blur-3xl
+            transition-all duration-700
+            group-hover:bg-[#d9b77c]/25
+          "
             />
 
             <div className="relative">
               <div className="mb-3 flex items-center justify-between">
                 <span
                   className="
-                    text-[10px] font-medium uppercase
-                    tracking-[0.28em]
-                    text-[#d9b77c]
-                  "
+                text-[10px] font-medium uppercase
+                tracking-[0.28em]
+                text-[#d9b77c]
+              "
                 >
                   Coming this autumn
                 </span>
@@ -242,20 +245,20 @@ const SectionOne = () => {
                   size={17}
                   strokeWidth={1.5}
                   className="
-                    text-[#e6d1aa]
-                    transition-transform duration-500
-                    group-hover:-translate-y-1
-                    group-hover:translate-x-1
-                  "
+                text-[#e6d1aa]
+                transition-transform duration-500
+                group-hover:-translate-y-1
+                group-hover:translate-x-1
+              "
                 />
               </div>
 
               <h2
                 className="
-                  text-2xl font-medium
-                  tracking-tight
-                  text-[#fff8ed]
-                "
+              text-2xl font-medium
+              tracking-tight
+              text-[#fff8ed]
+            "
               >
                 Durga Puja
               </h2>
@@ -263,9 +266,9 @@ const SectionOne = () => {
               <div className="mt-1 flex items-baseline gap-2">
                 <span
                   className="
-                    font-serif text-4xl italic
-                    text-[#e2c58e]
-                  "
+                font-serif text-4xl italic
+                text-[#e2c58e]
+              "
                 >
                   2026
                 </span>
@@ -282,8 +285,8 @@ const SectionOne = () => {
         </motion.div>
 
         {/* =======================================================
-            SCROLL INDICATOR
-        ======================================================== */}
+        SCROLL INDICATOR
+    ======================================================== */}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -293,11 +296,11 @@ const SectionOne = () => {
             duration: 1,
           }}
           className="
-            absolute
-            bottom-7 left-1/2
-            -translate-x-1/2
-            sm:bottom-8
-          "
+        absolute
+        bottom-7 left-1/2
+        -translate-x-1/2
+        sm:bottom-8
+      "
         >
           <motion.a
             href="#about"
@@ -311,34 +314,34 @@ const SectionOne = () => {
               ease: "easeInOut",
             }}
             className="
-              group flex flex-col
-              items-center gap-2
-            "
+          group flex flex-col
+          items-center gap-2
+        "
           >
             <span
               className="
-                text-[9px] font-medium uppercase
-                tracking-[0.3em]
-                text-white/55
-                transition-colors duration-300
-                group-hover:text-white/85
-              "
+            text-[9px] font-medium uppercase
+            tracking-[0.3em]
+            text-white/55
+            transition-colors duration-300
+            group-hover:text-white/85
+          "
             >
               Explore
             </span>
 
             <span
               className="
-                flex h-10 w-7
-                items-center justify-center
-                rounded-full
-                border border-white/30
-                bg-white/5
-                backdrop-blur-sm
-                transition-all duration-300
-                group-hover:border-[#d9b77c]/60
-                group-hover:bg-white/10
-              "
+            flex h-10 w-7
+            items-center justify-center
+            rounded-full
+            border border-white/30
+            bg-white/5
+            backdrop-blur-sm
+            transition-all duration-300
+            group-hover:border-[#d9b77c]/60
+            group-hover:bg-white/10
+          "
             >
               <ArrowDown
                 size={14}
@@ -349,28 +352,26 @@ const SectionOne = () => {
           </motion.a>
         </motion.div>
       </div>
-
       {/* =========================================================
-          EDGE DETAILS
-      ========================================================== */}
-
+      EDGE DETAILS
+  ========================================================== */}
       {/* Left vertical ornament */}
       <div
         className="
-          pointer-events-none absolute
-          bottom-8 left-6
-          hidden items-center gap-3
-          lg:flex
-        "
+      pointer-events-none absolute
+      bottom-8 left-6
+      hidden items-center gap-3
+      lg:flex
+    "
       >
         <span className="h-px w-8 bg-white/25" />
 
         <span
           className="
-            text-[9px] uppercase
-            tracking-[0.3em]
-            text-white/35
-          "
+        text-[9px] uppercase
+        tracking-[0.3em]
+        text-white/35
+      "
         >
           Kalpataru
         </span>
