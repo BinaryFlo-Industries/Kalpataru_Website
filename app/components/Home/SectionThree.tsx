@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import map from "@svg-maps/india";
 
@@ -13,29 +13,39 @@ const stateDetails: Record<
   {
     title: string;
     description: string;
+    accent: string;
+    number: string;
   }
 > = {
   "West Bengal": {
     title: "Bengal",
     description:
       "The cultural heart of Kalpataru — its language, literature, music, food and traditions form the centre of our shared identity.",
+    accent: "#E63946",
+    number: "01",
   },
   Odisha: {
     title: "Odisha",
     description:
       "A neighbouring cultural landscape woven into eastern India's traditions through art, devotion, festivals and generations of exchange.",
+    accent: "#F59E0B",
+    number: "02",
   },
   Assam: {
     title: "Assam",
     description:
       "A region deeply connected to Bengal through history, language, migration and the living cultural traditions of eastern India.",
+    accent: "#D94672",
+    number: "03",
   },
 };
 
-export default function EasternIndiaSection() {
+const SectionThree = () => {
   const mapRef = useRef<SVGSVGElement | null>(null);
   const [selectedState, setSelectedState] = useState("West Bengal");
   const [drawn, setDrawn] = useState(false);
+
+  const selectedDetail = stateDetails[selectedState];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -56,22 +66,26 @@ export default function EasternIndiaSection() {
       if (!name) return;
 
       path.style.transition =
-        "fill 500ms ease, stroke 500ms ease, opacity 500ms ease, transform 500ms ease";
+        "fill 400ms ease, stroke 400ms ease, opacity 400ms ease, transform 400ms ease";
 
       path.style.transformOrigin = "center";
       path.style.transformBox = "fill-box";
 
       if (featuredStates.has(name)) {
+        const detail = stateDetails[name];
+
         path.style.opacity = "1";
-        path.style.fill = name === selectedState ? "#7a3f2d" : "#b49367";
-        path.style.stroke = "#6d4937";
-        path.style.strokeWidth = "1.2";
+        path.style.fill =
+          name === selectedState ? detail.accent : `${detail.accent}55`;
+        path.style.stroke =
+          name === selectedState ? detail.accent : `${detail.accent}90`;
+        path.style.strokeWidth = name === selectedState ? "1.8" : "1.1";
         path.style.cursor = "pointer";
       } else {
-        path.style.opacity = "0.16";
-        path.style.fill = "#9a7955";
-        path.style.stroke = "#8d6c4c";
-        path.style.strokeWidth = "0.45";
+        path.style.opacity = "0.12";
+        path.style.fill = "#3B0B12";
+        path.style.stroke = "#3B0B12";
+        path.style.strokeWidth = "0.4";
         path.style.cursor = "default";
       }
     });
@@ -111,17 +125,14 @@ export default function EasternIndiaSection() {
     <section
       id="community"
       className="
-            relative isolate overflow-hidden
-            bg-transparent
-            text-[#4c3028]
-        "
+        relative isolate overflow-hidden
+        bg-transparent
+        text-[#3B0B12]
+      "
     >
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
-
-      <div className="relative mx-auto max-w-7xl px-6 py-28 sm:px-10 lg:px-14 lg:py-40">
+      <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 sm:py-28 lg:px-14 lg:py-36">
         {/* Section label */}
+
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,116 +140,82 @@ export default function EasternIndiaSection() {
           transition={{ duration: 0.8 }}
           className="flex items-center gap-4"
         >
-          <span className="h-px w-12 bg-[#7b4a35]/45" />
+          <span className="h-px w-10 bg-[#E63946]" />
 
-          <span
-            className="
-              text-[10px] font-medium uppercase
-              tracking-[0.32em]
-              text-[#7b4a35]/70
-            "
-          >
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#E63946]">
             A shared cultural landscape
           </span>
 
-          <span className="h-px w-12 bg-[#7b4a35]/20" />
+          <span className="h-px w-10 bg-[#F59E0B]" />
         </motion.div>
 
-        {/* =================================================
-            MAIN TWO COLUMN COMPOSITION
-        ================================================== */}
+        {/* Main composition */}
 
-        <div
-          className="
-            mt-14
-            grid gap-16
-            lg:grid-cols-[1.05fr_0.95fr]
-            lg:items-center
-            lg:gap-20
-          "
-        >
-          {/* =================================================
-              MAP
-          ================================================== */}
+        <div className="mt-14 grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
+          {/* Map */}
 
-          <div className="relative order-2 lg:order-1">
-            {/* Map title */}
+          <div className="order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="mb-8 flex items-center justify-between"
+              className="mb-7 flex items-end justify-between"
             >
               <div>
-                <p
-                  className="
-                    font-serif text-lg italic
-                    text-[#89613e]
-                  "
-                >
+                <p className="font-serif text-xl italic text-[#3B0B12]">
                   The eastern lands
                 </p>
 
-                <p
-                  className="
-                    mt-1 text-[10px]
-                    uppercase tracking-[0.25em]
-                    text-[#89613e]/55
-                  "
-                >
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.25em] text-[#3B0B12]/40">
                   Three regions · one conversation
                 </p>
               </div>
 
-              <span
-                className="
-                  hidden text-[9px]
-                  uppercase tracking-[0.2em]
-                  text-[#89613e]/50
-                  sm:block
-                "
-              >
+              <span className="hidden text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/35 sm:block">
                 East India
               </span>
             </motion.div>
 
-            {/* Map frame */}
-            <div
+            {/* Map card */}
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="
-                relative
-                flex min-h-105
-                items-center justify-center
-                overflow-hidden
+                relative overflow-hidden
                 rounded-4xl
-                border border-[#7b4a35]/15
-                bg-[#f8edda]/35
+                border border-[#3B0B12]/10
+                bg-[#FFFDF8]
                 px-5 py-8
+                sm:px-8 sm:py-10
               "
             >
-              {/* subtle internal paper glow */}
-              <div
-                className="
-                  pointer-events-none absolute
-                  left-1/2 top-1/2
-                  h-72 w-72
-                  -translate-x-1/2
-                  -translate-y-1/2
-                  rounded-full
-                  bg-[#b99361]/10
-                  blur-3xl
-                "
-              />
+              <div className="absolute left-6 top-5 flex items-center gap-2 sm:left-8">
+                <motion.span
+                  key={selectedState}
+                  initial={{ scale: 0.7, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="h-2 w-2 rounded-full"
+                  style={{ backgroundColor: selectedDetail.accent }}
+                />
 
-              {/* SVG */}
+                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/40">
+                  {selectedState}
+                </span>
+              </div>
+
               <motion.svg
                 ref={mapRef}
                 viewBox={map.viewBox}
                 className="
-                  relative z-10
-                  h-auto
-                  w-full
-                  max-w-125
+                  relative z-10 mx-auto mt-6
+                  h-auto w-full max-w-125
                   overflow-visible
                 "
                 initial={{ opacity: 0 }}
@@ -254,6 +231,8 @@ export default function EasternIndiaSection() {
                   .map(
                     (location: { id: string; name: string; path: string }) => {
                       const isSelected = location.name === selectedState;
+
+                      const detail = stateDetails[location.name];
 
                       return (
                         <motion.path
@@ -271,25 +250,29 @@ export default function EasternIndiaSection() {
                           viewport={{ once: true }}
                           transition={{
                             pathLength: {
-                              duration: 1.7,
-                              delay: 0.15,
+                              duration: 1.5,
+                              delay: 0.1,
                               ease: "easeInOut",
                             },
                             opacity: {
-                              duration: 0.7,
-                              delay: 0.15,
+                              duration: 0.6,
+                              delay: 0.1,
                             },
                           }}
-                          fill={isSelected ? "#7a3f2d" : "#b49367"}
-                          stroke="#6d4937"
-                          strokeWidth={1.2}
+                          fill={
+                            isSelected ? detail.accent : `${detail.accent}55`
+                          }
+                          stroke={
+                            isSelected ? detail.accent : `${detail.accent}90`
+                          }
+                          strokeWidth={isSelected ? 1.8 : 1.1}
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           className="
-            cursor-pointer
-            transition-all duration-500
-            hover:brightness-90
-          "
+                            cursor-pointer
+                            transition-all duration-300
+                            hover:brightness-105
+                          "
                           onClick={() => handleStateClick(location.name)}
                           tabIndex={0}
                           role="button"
@@ -306,25 +289,50 @@ export default function EasternIndiaSection() {
                   )}
               </motion.svg>
 
-              {/* Map caption */}
-              <div
-                className="
-                  absolute bottom-4 left-1/2
-                  -translate-x-1/2
-                  whitespace-nowrap
-                  text-[8px] uppercase
-                  tracking-[0.22em]
-                  text-[#89613e]/45
-                "
-              >
-                West Bengal · Odisha · Assam
+              {/* Map legend */}
+
+              <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2">
+                {Array.from(featuredStates).map((state) => {
+                  const detail = stateDetails[state];
+                  const active = selectedState === state;
+
+                  return (
+                    <button
+                      key={state}
+                      type="button"
+                      onClick={() => setSelectedState(state)}
+                      className="
+                        group flex items-center gap-2
+                        text-[9px] font-semibold uppercase
+                        tracking-[0.16em]
+                        transition-colors
+                      "
+                      style={{
+                        color: active
+                          ? detail.accent
+                          : "rgba(59, 11, 18, 0.45)",
+                      }}
+                    >
+                      <span
+                        className="
+                          h-2 w-2 rounded-full
+                          transition-transform duration-300
+                          group-hover:scale-125
+                        "
+                        style={{
+                          backgroundColor: detail.accent,
+                        }}
+                      />
+
+                      {state}
+                    </button>
+                  );
+                })}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* =================================================
-              WRITING
-          ================================================== */}
+          {/* Writing */}
 
           <div className="order-1 lg:order-2">
             <motion.p
@@ -332,12 +340,7 @@ export default function EasternIndiaSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="
-                mb-4
-                font-serif text-xl italic
-                text-[#89613e]
-                sm:text-2xl
-              "
+              className="mb-4 font-serif text-xl italic text-[#D94672] sm:text-2xl"
             >
               Beyond borders.
             </motion.p>
@@ -347,40 +350,34 @@ export default function EasternIndiaSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 1,
+                duration: 0.9,
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="
                 font-serif
                 text-5xl font-medium
-                leading-[0.94]
-                tracking-[-0.035em]
-                text-[#4b2d26]
+                leading-[0.92]
+                tracking-[-0.04em]
+                text-[#3B0B12]
                 sm:text-6xl
                 lg:text-[5rem]
               "
             >
               One eastern
               <br />
-              <span className="italic text-[#7a3f2d]">spirit.</span>
+              <span className="italic text-[#E63946]">spirit.</span>
             </motion.h2>
 
-            {/* Animated writing line */}
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{
-                duration: 1,
-                delay: 0.25,
+                duration: 0.9,
+                delay: 0.2,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="
-                mt-8
-                h-px w-20
-                origin-left
-                bg-[#8d5d3d]/50
-              "
+              className="mt-8 h-1 w-16 origin-left bg-[#E63946]"
             />
 
             <motion.p
@@ -388,16 +385,10 @@ export default function EasternIndiaSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.9,
-                delay: 0.35,
+                duration: 0.8,
+                delay: 0.3,
               }}
-              className="
-                mt-8
-                max-w-xl
-                text-sm leading-7
-                text-[#6d5144]
-                sm:text-base sm:leading-8
-              "
+              className="mt-8 max-w-xl text-sm leading-7 text-[#5A3038] sm:text-base sm:leading-8"
             >
               Culture has never followed a perfectly drawn boundary. Across
               Bengal and the lands around it, generations have travelled,
@@ -409,25 +400,17 @@ export default function EasternIndiaSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.9,
-                delay: 0.48,
+                duration: 0.8,
+                delay: 0.42,
               }}
-              className="
-                mt-5
-                max-w-xl
-                text-sm leading-7
-                text-[#6d5144]
-                sm:text-base sm:leading-8
-              "
+              className="mt-5 max-w-xl text-sm leading-7 text-[#5A3038] sm:text-base sm:leading-8"
             >
               Kalpataru brings that spirit into the present — celebrating
               Bengali heritage while welcoming the many communities and
               traditions that have shaped eastern India.
             </motion.p>
 
-            {/* =================================================
-                STATE SELECTOR
-            ================================================== */}
+            {/* State selector */}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -435,66 +418,99 @@ export default function EasternIndiaSection() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.8,
-                delay: 0.6,
+                delay: 0.55,
               }}
               className="mt-10"
             >
-              <div
-                className="
-                  mb-4 text-[9px]
-                  uppercase tracking-[0.25em]
-                  text-[#89613e]/60
-                "
-              >
-                Explore the connection
+              <div className="mb-4 flex items-center justify-between">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#3B0B12]/40">
+                  Explore the connection
+                </span>
+
+                <motion.span
+                  key={selectedState}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-[10px] font-semibold"
+                  style={{ color: selectedDetail.accent }}
+                >
+                  {selectedDetail.number} / 03
+                </motion.span>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {Array.from(featuredStates).map((state) => (
-                  <button
-                    key={state}
-                    type="button"
-                    onClick={() => setSelectedState(state)}
-                    className={`
-                      rounded-full
-                      border px-4 py-2.5
-                      text-[11px]
-                      transition-all duration-300
-                      ${
-                        selectedState === state
-                          ? "border-[#7a3f2d] bg-[#7a3f2d] text-[#fff8ed]"
-                          : "border-[#7b4a35]/20 bg-[#f8edda]/40 text-[#6d5144] hover:border-[#7a3f2d]/45 hover:text-[#7a3f2d]"
+                {Array.from(featuredStates).map((state) => {
+                  const detail = stateDetails[state];
+                  const active = selectedState === state;
+
+                  return (
+                    <button
+                      key={state}
+                      type="button"
+                      onClick={() => setSelectedState(state)}
+                      className={`
+                        group flex items-center gap-2
+                        rounded-full
+                        border
+                        px-4 py-2.5
+                        text-[10px] font-semibold
+                        uppercase tracking-[0.12em]
+                        transition-all duration-300
+                        ${
+                          active
+                            ? "text-white"
+                            : "border-[#3B0B12]/12 bg-white/50 text-[#3B0B12]/55 hover:border-[#3B0B12]/25 hover:text-[#3B0B12]"
+                        }
+                      `}
+                      style={
+                        active
+                          ? {
+                              backgroundColor: detail.accent,
+                              borderColor: detail.accent,
+                            }
+                          : undefined
                       }
-                    `}
-                  >
-                    {state}
-                  </button>
-                ))}
+                    >
+                      <span
+                        className="
+                          h-1.5 w-1.5 rounded-full
+                          transition-transform duration-300
+                          group-hover:scale-125
+                        "
+                        style={{
+                          backgroundColor: active ? "#FFFFFF" : detail.accent,
+                        }}
+                      />
+
+                      {state}
+                    </button>
+                  );
+                })}
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* =================================================
-            SELECTED REGION NOTE
-        ================================================== */}
+        {/* Selected region */}
 
         <motion.div
           layout
           className="
             mt-20
-            border-t border-[#7b4a35]/20
+            border-t border-[#3B0B12]/10
             pt-8
           "
         >
           <AnimateSelectedState selectedState={selectedState} />
         </motion.div>
       </div>
+
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-[#3B0B12]/10" />
     </section>
   );
-}
+};
 
-function AnimateSelectedState({ selectedState }: { selectedState: string }) {
+const AnimateSelectedState = ({ selectedState }: { selectedState: string }) => {
   const detail = stateDetails[selectedState];
 
   return (
@@ -503,7 +519,7 @@ function AnimateSelectedState({ selectedState }: { selectedState: string }) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.5,
+        duration: 0.45,
         ease: [0.22, 1, 0.36, 1],
       }}
       className="
@@ -513,34 +529,23 @@ function AnimateSelectedState({ selectedState }: { selectedState: string }) {
       "
     >
       <div>
-        <span
-          className="
-            text-[9px] uppercase
-            tracking-[0.25em]
-            text-[#89613e]/55
-          "
-        >
+        <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#3B0B12]/40">
           Selected region
         </span>
 
-        <h3
-          className="
-            mt-1 font-serif
-            text-2xl italic
-            text-[#60372c]
-          "
-        >
-          {detail.title}
-        </h3>
+        <div className="mt-1 flex items-center gap-3">
+          <span
+            className="h-2.5 w-2.5 rounded-full"
+            style={{ backgroundColor: detail.accent }}
+          />
+
+          <h3 className="font-serif text-2xl italic text-[#3B0B12]">
+            {detail.title}
+          </h3>
+        </div>
       </div>
 
-      <p
-        className="
-          max-w-2xl
-          text-sm leading-7
-          text-[#6d5144]
-        "
-      >
+      <p className="max-w-2xl text-sm leading-7 text-[#5A3038]">
         {detail.description}
       </p>
 
@@ -549,24 +554,25 @@ function AnimateSelectedState({ selectedState }: { selectedState: string }) {
         className="
           group inline-flex
           items-center gap-2
-          text-[10px] font-medium
-          uppercase tracking-[0.2em]
-          text-[#5c3028]
-          transition-colors
-          hover:text-[#5c1f1f]
+          rounded-full
+          bg-[#3B0B12]
+          px-4 py-2.5
+          text-[9px] font-semibold
+          uppercase tracking-[0.18em]
+          text-white
+          transition-all duration-300
+          hover:bg-[#E63946]
         "
       >
         Our community
-        <ArrowUpRight
-          size={14}
-          strokeWidth={1.5}
-          className="
-            transition-transform duration-300
-            group-hover:-translate-y-0.5
-            group-hover:translate-x-0.5
-          "
+        <ArrowRight
+          size={13}
+          strokeWidth={1.8}
+          className="transition-transform duration-300 group-hover:translate-x-1"
         />
       </Link>
     </motion.div>
   );
-}
+};
+
+export default SectionThree;

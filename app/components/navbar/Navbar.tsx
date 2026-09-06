@@ -169,12 +169,12 @@ export default function Navbar() {
           "rounded-[28px] border",
           "transition-all duration-500",
           scrolled
-            ? "border-white/40 bg-[#f8f1e5]/90 shadow-[0_12px_50px_rgba(65,42,20,0.14)] backdrop-blur-2xl"
-            : "border-white/25 bg-[#f8f1e5]/70 shadow-[0_8px_40px_rgba(65,42,20,0.08)] backdrop-blur-xl",
+            ? "border-white/60 bg-[#fffdf8] shadow-[0_12px_50px_rgba(59,11,18,0.14)]"
+            : "border-white/60 bg-[#fffdf8] shadow-[0_8px_40px_rgba(59,11,18,0.08)]",
         ].join(" ")}
       >
         {/* Decorative glass highlight */}
-        <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-white to-transparent" />
 
         {/* Logo */}
         <Link
@@ -243,9 +243,9 @@ export default function Navbar() {
               className="
                 group relative flex items-center gap-2
                 overflow-hidden rounded-full
-                bg-[#5c1f1f] px-5 py-3
-                text-sm font-medium text-[#fff8ed]
-                shadow-[0_5px_20px_rgba(92,31,31,0.18)]
+                bg-[#E63946] px-5 py-3
+                text-sm font-medium text-white
+                shadow-[0_5px_20px_rgba(230,57,70,0.24)]
               "
             >
               <span className="relative z-10">Join Us</span>
@@ -260,7 +260,7 @@ export default function Navbar() {
                 className="
                   absolute inset-0
                   -translate-x-full
-                  bg-[#742b2b]
+                  bg-[#D62839]
                   transition-transform duration-500
                   group-hover:translate-x-0
                 "
@@ -279,9 +279,9 @@ export default function Navbar() {
             ml-auto mr-3 flex h-11 w-11
             items-center justify-center
             rounded-full
-            border border-[#5c1f1f]/10
-            bg-white/30
-            text-[#5c1f1f]
+            border border-[#E63946]/15
+            bg-white/40
+            text-[#E63946]
             lg:hidden
           "
         >
@@ -334,12 +334,11 @@ export default function Navbar() {
                 overflow-y-auto
                 overscroll-contain
                 rounded-[28px]
-                border border-white/40
-                bg-[#f8f1e5]/95
-                shadow-[0_20px_60px_rgba(65,42,20,0.14)]
-                backdrop-blur-2xl
+                border border-white/60
+                bg-[#fffdf8]
+                shadow-[0_20px_60px_rgba(59,11,18,0.14)]
                 lg:hidden
-                "
+              "
             >
               <motion.div
                 initial={{ y: -10 }}
@@ -361,10 +360,11 @@ export default function Navbar() {
                   className="
                     mt-2 flex items-center justify-center
                     rounded-2xl
-                    bg-[#5c1f1f]
+                    bg-[#E63946]
                     px-5 py-3.5
                     text-sm font-medium
-                    text-[#fff8ed]
+                    text-white
+                    shadow-[0_5px_20px_rgba(230,57,70,0.20)]
                   "
                 >
                   Join Us
@@ -399,9 +399,9 @@ function NavLink({
         px-4 py-3
         text-[14px]
         font-medium
-        text-[#573f34]
+        text-[#3B0B12]
         transition-colors duration-300
-        hover:text-[#5c1f1f]
+        hover:text-[#E63946]
       "
     >
       <span className="relative z-10">{label}</span>
@@ -417,7 +417,7 @@ function NavLink({
           className="
             absolute inset-0
             rounded-full
-            bg-[#5c1f1f]/[0.07]
+            bg-[#E63946]/8
           "
         />
       )}
@@ -426,7 +426,7 @@ function NavLink({
         className="
           absolute bottom-1.5 left-1/2 h-0.5 w-0
           -translate-x-1/2 rounded-full
-          bg-[#5c1f1f]
+          bg-[#F59E0B]
           transition-all duration-300
           group-hover:w-3
         "
@@ -465,9 +465,9 @@ function Dropdown({
           group relative flex items-center gap-1
           rounded-full px-4 py-3
           text-[14px] font-medium
-          text-[#573f34]
+          text-[#3B0B12]
           transition-colors duration-300
-          hover:text-[#5c1f1f]
+          hover:text-[#E63946]
         "
       >
         <span className="relative z-10">{item.label}</span>
@@ -495,7 +495,7 @@ function Dropdown({
             className="
               absolute inset-0
               rounded-full
-              bg-[#5c1f1f]/[0.07]
+              bg-[#E63946]/8
             "
           />
         )}
@@ -525,21 +525,20 @@ function Dropdown({
             }}
             className="
               absolute right-0 top-[calc(100%+10px)]
-                w-75
-                max-h-[70vh]
-                overflow-y-auto
-                overscroll-contain
-                origin-top-right
-                rounded-3xl
-                border border-white/50
-                bg-[#faf3e8]/95
-                p-2
-                shadow-[0_20px_70px_rgba(65,42,20,0.16)]
-                backdrop-blur-2xl
+              w-75
+              max-h-[70vh]
+              overflow-y-auto
+              overscroll-contain
+              origin-top-right
+              rounded-3xl
+              border border-white/60
+              bg-[#fffdf8]
+              p-2
+              shadow-[0_20px_70px_rgba(59,11,18,0.16)]
             "
           >
             {/* top decorative line */}
-            <div className="mb-2 h-px bg-linear-to-r from-transparent via-[#8d5b43]/25 to-transparent" />
+            <div className="mb-2 h-px bg-[#F59E0B]/45" />
 
             {item.dropdown?.map((dropdownItem, index) => (
               <motion.div
@@ -562,16 +561,16 @@ function Dropdown({
                     group block rounded-[18px]
                     px-4 py-3
                     transition-colors duration-300
-                    hover:bg-[#5c1f1f]/5.5
+                    hover:bg-[#E63946]/[0.07]
                   "
                 >
                   <div className="flex items-center justify-between">
                     <span
                       className="
                         text-sm font-medium
-                        text-[#4d382f]
+                        text-[#3B0B12]
                         transition-colors
-                        group-hover:text-[#5c1f1f]
+                        group-hover:text-[#E63946]
                       "
                     >
                       {dropdownItem.label}
@@ -583,7 +582,7 @@ function Dropdown({
                         opacity-0
                         -translate-x-1
                         translate-y-1
-                        text-[#5c1f1f]
+                        text-[#D94672]
                         transition-all duration-300
                         group-hover:translate-x-0
                         group-hover:translate-y-0
@@ -593,7 +592,7 @@ function Dropdown({
                   </div>
 
                   {dropdownItem.description && (
-                    <p className="mt-1 max-w-60 text-xs leading-5 text-[#806c60]">
+                    <p className="mt-1 max-w-60 text-xs leading-5 text-[#6B5150]">
                       {dropdownItem.description}
                     </p>
                   )}
@@ -634,7 +633,7 @@ function MobileNavItem({
           className={`
             flex items-center rounded-2xl px-4 py-3.5
             text-sm font-medium
-            ${active ? "bg-[#5c1f1f]/[0.07] text-[#5c1f1f]" : "text-[#573f34]"}
+            ${active ? "bg-[#E63946]/8 text-[#E63946]" : "text-[#3B0B12]"}
           `}
         >
           {item.label}
@@ -655,7 +654,7 @@ function MobileNavItem({
         className="
           flex w-full items-center justify-between
           rounded-2xl px-4 py-3.5
-          text-sm font-medium text-[#573f34]
+          text-sm font-medium text-[#3B0B12]
         "
       >
         <span>{item.label}</span>
@@ -676,17 +675,17 @@ function MobileNavItem({
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="mb-1 ml-3 border-l border-[#5c1f1f]/10 pl-3">
+            <div className="mb-1 ml-3 border-l-2 border-[#F59E0B]/35 pl-3">
               {item.dropdown.map((dropdownItem) => (
                 <Link
                   key={dropdownItem.label}
                   href={dropdownItem.href}
                   className="
                     block rounded-xl px-4 py-3
-                    text-sm text-[#806c60]
+                    text-sm text-[#6B5150]
                     transition-colors
-                    hover:bg-[#5c1f1f]/5
-                    hover:text-[#5c1f1f]
+                    hover:bg-[#E63946]/6
+                    hover:text-[#E63946]
                   "
                 >
                   {dropdownItem.label}

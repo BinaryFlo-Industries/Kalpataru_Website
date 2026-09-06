@@ -13,7 +13,7 @@ import {
   User,
 } from "lucide-react";
 
-const SectionThree = () => {
+const SectionOne = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,99 +67,181 @@ const SectionThree = () => {
   return (
     <section
       id="join-form"
-      className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32 lg:px-12"
+      className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-28 lg:px-12 lg:py-36"
     >
-      {/* Decorative vertical lines */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-[7%] hidden w-px bg-[#9b7448]/12 lg:block"
-      />
+      <div className="mx-auto max-w-7xl">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+          className="mb-14 lg:mb-16"
+        >
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+            <div>
+              <div className="mb-6 flex items-center gap-4">
+                <span className="h-px w-10 bg-[#E63946]" />
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-[7%] hidden w-px bg-[#9b7448]/12 lg:block"
-      />
+                <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#3B0B12]/50">
+                  Join Kalpataru
+                </span>
+              </div>
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="grid items-start gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
-          {/* LEFT — Invitation */}
+              <p className="font-serif text-lg italic text-[#D94672]">
+                Come be part of it.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-5xl leading-[0.92] tracking-[-0.04em] text-[#3B0B12] sm:text-6xl lg:text-[5.5rem]">
+                We&apos;d love to
+                <br />
+                <span className="italic text-[#E63946]">hear from you.</span>
+              </h2>
+
+              <p className="mt-7 max-w-xl text-sm leading-7 text-[#3B0B12]/60 sm:text-base sm:leading-8">
+                If Kalpataru feels like a community you would like to be part
+                of, tell us a little about yourself and what brings you here.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Main content */}
+        <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr]">
+          {/* Invitation card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="lg:sticky lg:top-32"
+            className="
+              group
+              relative
+              flex
+              min-h-140
+              flex-col
+              overflow-hidden
+              rounded-[1.75rem]
+              border
+              border-[#3B0B12]/10
+              bg-[#FFFDF8]
+              p-7
+              transition-shadow
+              duration-500
+              hover:shadow-[0_20px_60px_rgba(59,11,18,0.08)]
+              sm:p-9
+              lg:p-10
+            "
           >
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-[#9b7448]/60" />
+            {/* Accent line */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute left-0 top-0 h-1 bg-[#E63946]"
+            />
 
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#765842] sm:text-xs">
-                The next step
-              </span>
+            {/* Background Bengali mark */}
+            <div className="pointer-events-none absolute -right-5 top-4 select-none font-serif text-[7rem] leading-none text-[#E63946]/4.5 transition-transform duration-500 group-hover:scale-105">
+              সাথে
             </div>
 
-            <h2 className="mt-7 font-serif text-[clamp(3rem,5vw,5.5rem)] font-normal leading-[0.92] tracking-[-0.045em] text-[#2b1718]">
-              We&apos;d love to
-              <span className="block italic text-[#5a2528]">hear from</span>
-              you.
-            </h2>
+            <div className="relative">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E63946]/20 bg-[#E63946]/5">
+                <MessageCircle
+                  size={19}
+                  strokeWidth={1.4}
+                  className="text-[#E63946]"
+                />
+              </div>
 
-            <p className="mt-8 max-w-md text-sm leading-8 text-[#75645a] sm:text-base">
-              If Kalpataru feels like a community you would like to be part of,
-              tell us a little about yourself and what brings you here.
-            </p>
+              <p className="mt-12 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#E63946]">
+                A little invitation
+              </p>
 
-            <div className="mt-10 border-l border-[#9b7448]/40 pl-5">
-              <p className="font-serif text-lg italic leading-8 text-[#5a2528]">
+              <h3 className="mt-3 max-w-md font-serif text-3xl leading-tight tracking-[-0.02em] text-[#3B0B12] sm:text-4xl">
+                A community is built
+                <span className="italic text-[#E63946]">
+                  {" "}
+                  one person at a time.
+                </span>
+              </h3>
+
+              <p className="mt-6 max-w-md text-sm leading-7 text-[#3B0B12]/60">
+                Whether you have grown up around Bengali culture or are simply
+                curious to discover more, there is always room at Kalpataru.
+              </p>
+            </div>
+
+            {/* Quote */}
+            <div className="relative mt-auto pt-12">
+              <div className="mb-5 h-px w-10 bg-[#F59E0B]" />
+
+              <p className="max-w-sm font-serif text-lg italic leading-8 text-[#3B0B12]/65">
                 “There is something beautiful about finding a little piece of
                 home, wherever life takes you.”
               </p>
             </div>
 
-            {/* Contact alternatives */}
-            <div className="mt-12 border-t border-[#9b7448]/20 pt-7">
-              <p className="text-[9px] uppercase tracking-[0.25em] text-[#8b735e]">
+            {/* Direct contact */}
+            <div className="relative mt-10 border-t border-[#3B0B12]/10 pt-7">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#3B0B12]/40">
                 Prefer to speak directly?
               </p>
 
               <div className="mt-5 space-y-4">
                 <a
                   href="tel:+919970502036"
-                  className="group flex items-center gap-3 text-sm text-[#4d4039] transition-colors hover:text-[#5a2528]"
+                  className="group/contact flex items-center gap-3 text-sm text-[#3B0B12]/70 transition-colors duration-300 hover:text-[#E63946]"
                 >
                   <Phone
                     size={15}
                     strokeWidth={1.3}
-                    className="text-[#9b7448]"
+                    className="text-[#E63946]"
                   />
 
                   <span>99705 02036</span>
+
+                  <ArrowRight
+                    size={13}
+                    strokeWidth={1.3}
+                    className="opacity-0 transition-all duration-300 group-hover/contact:translate-x-1 group-hover/contact:opacity-100"
+                  />
                 </a>
 
                 <a
                   href="mailto:kalpataruculturalfoundation@gmail.com"
-                  className="group flex items-center gap-3 text-sm text-[#4d4039] transition-colors hover:text-[#5a2528]"
+                  className="group/contact flex items-center gap-3 text-sm text-[#3B0B12]/70 transition-colors duration-300 hover:text-[#E63946]"
                 >
                   <Mail
                     size={15}
                     strokeWidth={1.3}
-                    className="text-[#9b7448]"
+                    className="text-[#E63946]"
                   />
 
                   <span className="break-all">
                     kalpataruculturalfoundation@gmail.com
                   </span>
+
+                  <ArrowRight
+                    size={13}
+                    strokeWidth={1.3}
+                    className="hidden shrink-0 opacity-0 transition-all duration-300 group-hover/contact:translate-x-1 group-hover/contact:opacity-100 sm:block"
+                  />
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* RIGHT — Form */}
+          {/* Form card */}
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{
@@ -167,275 +249,389 @@ const SectionThree = () => {
               delay: 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="relative"
+            className="
+              relative
+              overflow-hidden
+              rounded-[1.75rem]
+              border
+              border-[#3B0B12]/10
+              bg-[#FFFDF8]
+              p-7
+              sm:p-9
+              lg:p-10
+            "
           >
-            <div className="border border-[#9b7448]/35 p-2">
-              <div className="relative border border-[#9b7448]/20 bg-[#fff9e7]/35 px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-                {/* Corner details */}
-                <span className="absolute left-0 top-0 h-6 w-6 border-l border-t border-[#9b7448]/70" />
-                <span className="absolute right-0 top-0 h-6 w-6 border-r border-t border-[#9b7448]/70" />
-                <span className="absolute bottom-0 left-0 h-6 w-6 border-b border-l border-[#9b7448]/70" />
-                <span className="absolute bottom-0 right-0 h-6 w-6 border-b border-r border-[#9b7448]/70" />
+            {/* Top accent */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute left-0 top-0 h-1 bg-[#F59E0B]"
+            />
 
-                <AnimatePresence mode="wait">
-                  {!submitted ? (
-                    <motion.div
-                      key="form"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      <div className="mb-10">
-                        <p className="text-[10px] uppercase tracking-[0.28em] text-[#765842]">
+            <AnimatePresence mode="wait">
+              {!submitted ? (
+                <motion.div
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <div className="mb-10">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#F59E0B]">
                           Join the community
                         </p>
 
-                        <h3 className="mt-3 font-serif text-3xl tracking-tight text-[#2b1718] sm:text-4xl">
+                        <h3 className="mt-3 font-serif text-3xl tracking-[-0.02em] text-[#3B0B12] sm:text-4xl">
                           Tell us about yourself.
                         </h3>
                       </div>
 
-                      <form onSubmit={handleSubmit} className="space-y-7">
-                        {/* Name */}
-                        <div>
-                          <label
-                            htmlFor="name"
-                            className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[#765842]"
-                          >
-                            Your name
-                          </label>
+                      <span className="hidden font-serif text-sm italic text-[#3B0B12]/30 sm:block">
+                        01 / 01
+                      </span>
+                    </div>
+                  </div>
 
-                          <div className="relative">
-                            <User
-                              size={16}
-                              strokeWidth={1.2}
-                              className="absolute left-0 top-3.5 text-[#9b7448]"
-                            />
-
-                            <input
-                              id="name"
-                              name="name"
-                              type="text"
-                              required
-                              value={formData.name}
-                              onChange={handleChange}
-                              placeholder="Enter your name"
-                              className="w-full border-b border-[#9b7448]/30 bg-transparent py-3 pl-7 pr-2 font-serif text-lg text-[#2b1718] outline-none placeholder:text-[#9b7448]/45 focus:border-[#5a2528]"
-                            />
-                          </div>
-                        </div>
-
-                        {/* Email */}
-                        <div>
-                          <label
-                            htmlFor="email"
-                            className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[#765842]"
-                          >
-                            Email address
-                          </label>
-
-                          <div className="relative">
-                            <Mail
-                              size={16}
-                              strokeWidth={1.2}
-                              className="absolute left-0 top-3.5 text-[#9b7448]"
-                            />
-
-                            <input
-                              id="email"
-                              name="email"
-                              type="email"
-                              required
-                              value={formData.email}
-                              onChange={handleChange}
-                              placeholder="Enter your email"
-                              className="w-full border-b border-[#9b7448]/30 bg-transparent py-3 pl-7 pr-2 font-serif text-lg text-[#2b1718] outline-none placeholder:text-[#9b7448]/45 focus:border-[#5a2528]"
-                            />
-                          </div>
-                        </div>
-
-                        {/* Phone */}
-                        <div>
-                          <label
-                            htmlFor="phone"
-                            className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[#765842]"
-                          >
-                            Phone number
-                          </label>
-
-                          <div className="relative">
-                            <Phone
-                              size={16}
-                              strokeWidth={1.2}
-                              className="absolute left-0 top-3.5 text-[#9b7448]"
-                            />
-
-                            <input
-                              id="phone"
-                              name="phone"
-                              type="tel"
-                              value={formData.phone}
-                              onChange={handleChange}
-                              placeholder="Enter your phone number"
-                              className="w-full border-b border-[#9b7448]/30 bg-transparent py-3 pl-7 pr-2 font-serif text-lg text-[#2b1718] outline-none placeholder:text-[#9b7448]/45 focus:border-[#5a2528]"
-                            />
-                          </div>
-                        </div>
-
-                        {/* Reason */}
-                        <div>
-                          <label
-                            htmlFor="reason"
-                            className="mb-2 block text-[10px] uppercase tracking-[0.2em] text-[#765842]"
-                          >
-                            Why do you want to join us?
-                          </label>
-
-                          <textarea
-                            id="reason"
-                            name="reason"
-                            required
-                            rows={5}
-                            value={formData.reason}
-                            onChange={handleChange}
-                            placeholder="Tell us a little about what brings you to Kalpataru..."
-                            className="w-full resize-none border-b border-[#9b7448]/30 bg-transparent px-0 py-3 font-serif text-lg leading-8 text-[#2b1718] outline-none placeholder:text-[#9b7448]/45 focus:border-[#5a2528]"
-                          />
-                        </div>
-
-                        {/* Error */}
-                        <AnimatePresence>
-                          {error && (
-                            <motion.p
-                              initial={{ opacity: 0, y: -5 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0 }}
-                              className="text-sm leading-6 text-[#8a3f3f]"
-                            >
-                              {error}
-                            </motion.p>
-                          )}
-                        </AnimatePresence>
-
-                        {/* Submit */}
-                        <div className="pt-3">
-                          <motion.button
-                            type="submit"
-                            disabled={isSubmitting}
-                            whileHover={!isSubmitting ? { y: -2 } : undefined}
-                            whileTap={
-                              !isSubmitting ? { scale: 0.98 } : undefined
-                            }
-                            className="group inline-flex w-full items-center justify-center gap-3 bg-[#5a2528] px-6 py-4 text-xs font-medium uppercase tracking-[0.2em] text-[#fff9e7] transition-colors duration-300 hover:bg-[#2b1718] disabled:cursor-not-allowed disabled:opacity-60"
-                          >
-                            {isSubmitting ? (
-                              <ScaleLoader
-                                height={18}
-                                width={3}
-                                radius={2}
-                                margin={2}
-                                color="#fff9e7"
-                              />
-                            ) : (
-                              <>
-                                Send your message
-                                <ArrowRight
-                                  size={16}
-                                  strokeWidth={1.3}
-                                  className="transition-transform duration-300 group-hover:translate-x-1"
-                                />
-                              </>
-                            )}
-                          </motion.button>
-                        </div>
-
-                        <p className="text-center text-[10px] leading-5 text-[#8b735e]">
-                          Your details will only be used to get in touch with
-                          you regarding your interest in joining Kalpataru.
-                        </p>
-                      </form>
-                    </motion.div>
-                  ) : (
-                    /* Success state */
-                    <motion.div
-                      key="success"
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex min-h-140 flex-col items-center justify-center text-center"
-                    >
-                      <motion.div
-                        initial={{ scale: 0.7, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{
-                          duration: 0.5,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="flex h-16 w-16 items-center justify-center rounded-full border border-[#9b7448]/50 bg-[#5a2528] text-[#fff9e7]"
+                  <form onSubmit={handleSubmit} className="space-y-7">
+                    {/* Name */}
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/45"
                       >
-                        <Check size={25} strokeWidth={1.4} />
-                      </motion.div>
+                        Your name
+                      </label>
 
-                      <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-[#765842]">
-                        Message received
-                      </p>
+                      <div className="relative">
+                        <User
+                          size={16}
+                          strokeWidth={1.2}
+                          className="absolute left-0 top-3.5 text-[#E63946]"
+                        />
 
-                      <h3 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] text-[#2b1718] sm:text-5xl">
-                        Welcome to the
-                        <span className="block italic text-[#5a2528]">
-                          conversation.
-                        </span>
-                      </h3>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Enter your name"
+                          className="
+                            w-full
+                            border-b
+                            border-[#3B0B12]/15
+                            bg-transparent
+                            py-3
+                            pl-7
+                            pr-2
+                            font-serif
+                            text-lg
+                            text-[#3B0B12]
+                            outline-none
+                            placeholder:text-[#3B0B12]/25
+                            transition-colors
+                            duration-300
+                            focus:border-[#E63946]
+                          "
+                        />
+                      </div>
+                    </div>
 
-                      <p className="mt-6 max-w-md text-sm leading-8 text-[#75645a]">
-                        Thank you for reaching out to Kalpataru. We have
-                        received your message and will get in touch with you
-                        soon.
-                      </p>
+                    {/* Email */}
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/45"
+                      >
+                        Email address
+                      </label>
 
-                      <div className="mt-9 h-px w-16 bg-[#9b7448]/50" />
+                      <div className="relative">
+                        <Mail
+                          size={16}
+                          strokeWidth={1.2}
+                          className="absolute left-0 top-3.5 text-[#E63946]"
+                        />
 
-                      <p className="mt-6 font-serif text-base italic text-[#5a2528]">
-                        Where Bengal comes together.
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Enter your email"
+                          className="
+                            w-full
+                            border-b
+                            border-[#3B0B12]/15
+                            bg-transparent
+                            py-3
+                            pl-7
+                            pr-2
+                            font-serif
+                            text-lg
+                            text-[#3B0B12]
+                            outline-none
+                            placeholder:text-[#3B0B12]/25
+                            transition-colors
+                            duration-300
+                            focus:border-[#E63946]
+                          "
+                        />
+                      </div>
+                    </div>
 
-            {/* Archival notation */}
-            <div className="mt-5 flex items-center justify-between px-1 text-[9px] uppercase tracking-[0.2em] text-[#8b735e]">
-              <span>Kalpataru</span>
-              <span>Join the community</span>
-            </div>
+                    {/* Phone */}
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/45"
+                      >
+                        Phone number
+                      </label>
+
+                      <div className="relative">
+                        <Phone
+                          size={16}
+                          strokeWidth={1.2}
+                          className="absolute left-0 top-3.5 text-[#E63946]"
+                        />
+
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="Enter your phone number"
+                          className="
+                            w-full
+                            border-b
+                            border-[#3B0B12]/15
+                            bg-transparent
+                            py-3
+                            pl-7
+                            pr-2
+                            font-serif
+                            text-lg
+                            text-[#3B0B12]
+                            outline-none
+                            placeholder:text-[#3B0B12]/25
+                            transition-colors
+                            duration-300
+                            focus:border-[#E63946]
+                          "
+                        />
+                      </div>
+                    </div>
+
+                    {/* Reason */}
+                    <div>
+                      <label
+                        htmlFor="reason"
+                        className="mb-2 block text-[9px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/45"
+                      >
+                        Why do you want to join us?
+                      </label>
+
+                      <textarea
+                        id="reason"
+                        name="reason"
+                        required
+                        rows={4}
+                        value={formData.reason}
+                        onChange={handleChange}
+                        placeholder="Tell us a little about what brings you to Kalpataru..."
+                        className="
+                          w-full
+                          resize-none
+                          border-b
+                          border-[#3B0B12]/15
+                          bg-transparent
+                          px-0
+                          py-3
+                          font-serif
+                          text-lg
+                          leading-8
+                          text-[#3B0B12]
+                          outline-none
+                          placeholder:text-[#3B0B12]/25
+                          transition-colors
+                          duration-300
+                          focus:border-[#E63946]
+                        "
+                      />
+                    </div>
+
+                    {/* Error */}
+                    <AnimatePresence>
+                      {error && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0 }}
+                          className="text-sm leading-6 text-[#E63946]"
+                        >
+                          {error}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Submit */}
+                    <div className="pt-2">
+                      <motion.button
+                        type="submit"
+                        disabled={isSubmitting}
+                        whileHover={!isSubmitting ? { y: -2 } : undefined}
+                        whileTap={!isSubmitting ? { scale: 0.985 } : undefined}
+                        className="
+                          group
+                          inline-flex
+                          w-full
+                          items-center
+                          justify-center
+                          gap-3
+                          rounded-full
+                          bg-[#E63946]
+                          px-6
+                          py-4
+                          text-[10px]
+                          font-semibold
+                          uppercase
+                          tracking-[0.22em]
+                          text-white
+                          transition-all
+                          duration-300
+                          hover:bg-[#3B0B12]
+                          hover:shadow-[0_12px_30px_rgba(59,11,18,0.12)]
+                          disabled:cursor-not-allowed
+                          disabled:opacity-60
+                        "
+                      >
+                        {isSubmitting ? (
+                          <ScaleLoader
+                            height={18}
+                            width={3}
+                            radius={2}
+                            margin={2}
+                            color="#ffffff"
+                          />
+                        ) : (
+                          <>
+                            Send your message
+                            <ArrowRight
+                              size={16}
+                              strokeWidth={1.3}
+                              className="transition-transform duration-300 group-hover:translate-x-1"
+                            />
+                          </>
+                        )}
+                      </motion.button>
+                    </div>
+
+                    <p className="text-center text-[9px] leading-5 text-[#3B0B12]/40">
+                      Your details will only be used to get in touch with you
+                      regarding your interest in joining Kalpataru.
+                    </p>
+                  </form>
+                </motion.div>
+              ) : (
+                /* Success state */
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex min-h-140 flex-col items-center justify-center text-center"
+                >
+                  <motion.div
+                    initial={{ scale: 0.7, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-[#E63946] text-white"
+                  >
+                    <Check size={25} strokeWidth={1.4} />
+                  </motion.div>
+
+                  <p className="mt-8 text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E63946]">
+                    Message received
+                  </p>
+
+                  <h3 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] text-[#3B0B12] sm:text-5xl">
+                    Welcome to the
+                    <span className="block italic text-[#E63946]">
+                      conversation.
+                    </span>
+                  </h3>
+
+                  <p className="mt-6 max-w-md text-sm leading-8 text-[#3B0B12]/60">
+                    Thank you for reaching out to Kalpataru. We have received
+                    your message and will get in touch with you soon.
+                  </p>
+
+                  <div className="mt-9 h-px w-16 bg-[#F59E0B]" />
+
+                  <p className="mt-6 font-serif text-base italic text-[#3B0B12]/60">
+                    Where Bengal comes together.
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
 
-        {/* Bottom WhatsApp note */}
+        {/* WhatsApp */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mt-20 flex max-w-2xl flex-col items-center justify-center gap-3 text-center sm:mt-24 sm:flex-row"
+          className="mx-auto mt-16 flex max-w-2xl flex-col items-center justify-center gap-3 text-center sm:mt-20 sm:flex-row"
         >
           <MessageCircle
             size={17}
             strokeWidth={1.2}
-            className="text-[#9b7448]"
+            className="text-[#E63946]"
           />
 
-          <p className="text-xs leading-6 text-[#75645a]">
+          <p className="text-xs leading-6 text-[#3B0B12]/55">
             You can also reach us directly on WhatsApp at{" "}
             <a
               href="https://wa.me/919970502036"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-[#5a2528] underline decoration-[#9b7448]/40 underline-offset-4 transition-colors hover:text-[#2b1718]"
+              className="font-medium text-[#3B0B12] underline decoration-[#E63946]/30 underline-offset-4 transition-colors duration-300 hover:text-[#E63946]"
             >
               99705 02036
             </a>
             .
+          </p>
+        </motion.div>
+
+        {/* Closing statement */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mt-20 text-center"
+        >
+          <div className="mx-auto mb-6 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#E63946]/30" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" />
+            <span className="h-px w-8 bg-[#E63946]/30" />
+          </div>
+
+          <p className="font-serif text-2xl italic text-[#3B0B12]/60 sm:text-3xl">
+            There&apos;s always room for one more.
           </p>
         </motion.div>
       </div>
@@ -443,4 +639,4 @@ const SectionThree = () => {
   );
 };
 
-export default SectionThree;
+export default SectionOne;

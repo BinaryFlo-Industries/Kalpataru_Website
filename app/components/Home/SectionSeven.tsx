@@ -102,7 +102,16 @@ export default function SectionSeven() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden px-5 py-28 sm:px-8 lg:px-12"
+      className="
+        relative
+        overflow-hidden
+        px-5
+        py-24
+        sm:px-8
+        sm:py-28
+        lg:px-12
+        lg:py-32
+      "
     >
       <div className="mx-auto max-w-6xl">
         {/* ============================================================
@@ -110,25 +119,47 @@ export default function SectionSeven() {
         ============================================================ */}
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          className="mb-14 text-center"
         >
           <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-[#7d1f2a]/45" />
+            <span className="h-px w-10 bg-[#E63946]" />
 
-            <span className="text-[10px] font-medium uppercase tracking-[0.34em] text-[#7d1f2a]/70">
+            <span
+              className="
+                text-[9px]
+                font-semibold
+                uppercase
+                tracking-[0.34em]
+                text-[#3B0B12]/55
+              "
+            >
               Testimonials
             </span>
 
-            <span className="h-px w-12 bg-[#7d1f2a]/45" />
+            <span className="h-px w-10 bg-[#F59E0B]" />
           </div>
 
-          <h2 className="font-serif text-5xl leading-none text-[#34251c] sm:text-6xl lg:text-7xl">
+          <p className="mb-3 font-serif text-lg italic text-[#D94672]">
+            Words from the people who make it special.
+          </p>
+
+          <h2
+            className="
+              font-serif
+              text-5xl
+              leading-none
+              tracking-[-0.035em]
+              text-[#3B0B12]
+              sm:text-6xl
+              lg:text-7xl
+            "
+          >
             Voices of
-            <span className="ml-2 italic text-[#7d1f2a]">Kalpataru.</span>
+            <span className="ml-2 italic text-[#E63946]">Kalpataru.</span>
           </h2>
         </motion.div>
 
@@ -136,46 +167,165 @@ export default function SectionSeven() {
             FEATURED TESTIMONIAL
         ============================================================ */}
 
-        <div className="relative min-h-117.5 overflow-hidden border-y border-[#8c6b45]/30">
-          {/* Large decorative quote */}
-          <div className="pointer-events-none absolute left-1/2 top-5 -translate-x-1/2 select-none font-serif text-[180px] leading-none text-[#7d1f2a]/4.5 sm:text-[240px]">
+        <div
+          className="
+            relative
+            h-175
+            overflow-hidden
+            rounded-4xl
+            border
+            border-[#3B0B12]/10
+            bg-[#FFFDF8]
+            sm:h-150
+            lg:h-140
+          "
+        >
+          {/* Decorative quote */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-1/2
+              -top-5
+              -translate-x-1/2
+              select-none
+              font-serif
+              text-[190px]
+              leading-none
+              text-[#E63946]/[0.035]
+              sm:text-[250px]
+            "
+          >
             “
           </div>
 
-          <div className="relative flex min-h-117.5 items-center justify-center px-3 py-16 sm:px-12 lg:px-20">
+          {/* Accent rail */}
+
+          <div className="absolute left-0 top-0 h-full w-1 bg-[#E63946]" />
+
+          <div
+            className="
+              relative
+              flex
+              h-full
+              items-center
+              justify-center
+              px-6
+              py-14
+              sm:px-12
+              lg:px-20
+            "
+          >
+            {/* ========================================================
+                IMPORTANT:
+                Absolute positioning keeps changing testimonials from
+                affecting the container height.
+            ======================================================== */}
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -18 }}
+                initial={{
+                  opacity: 0,
+                  y: 18,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: -18,
+                }}
                 transition={{
-                  duration: 0.55,
+                  duration: 0.5,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="w-full max-w-4xl text-center"
+                className="
+                  absolute
+                  inset-x-6
+                  top-1/2
+                  -translate-y-1/2
+                  flex
+                  max-h-147.5
+                  flex-col
+                  items-center
+                  justify-center
+                  text-center
+                  sm:inset-x-12
+                  lg:inset-x-20
+                "
               >
                 <Quote
-                  size={28}
-                  strokeWidth={1}
-                  className="mx-auto mb-8 text-[#7d1f2a]/40"
+                  size={26}
+                  strokeWidth={1.2}
+                  className="mb-7 text-[#E63946]/45"
                 />
 
-                <blockquote className="font-serif text-2xl leading-[1.65] text-[#403126] sm:text-3xl lg:text-[34px] lg:leading-[1.6]">
+                <blockquote
+                  className="
+                    max-w-4xl
+                    font-serif
+                    text-[20px]
+                    leading-[1.55]
+                    tracking-[-0.01em]
+                    text-[#3B0B12]/85
+                    sm:text-2xl
+                    sm:leading-[1.55]
+                    lg:text-[29px]
+                    lg:leading-normal
+                  "
+                >
                   “{current.quote}”
                 </blockquote>
 
-                <div className="mt-9 flex items-center justify-center gap-4">
-                  <span className="h-px w-8 bg-[#7d1f2a]/45" />
+                <div className="mt-8 flex items-center justify-center gap-3">
+                  <span className="h-px w-7 bg-[#F59E0B]" />
 
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7d1f2a]">
+                  <span
+                    className="
+                      text-[9px]
+                      font-semibold
+                      uppercase
+                      tracking-[0.24em]
+                      text-[#E63946]
+                    "
+                  >
                     {current.name}
                   </span>
 
-                  <span className="h-px w-8 bg-[#7d1f2a]/45" />
+                  <span className="h-px w-7 bg-[#F59E0B]" />
                 </div>
               </motion.div>
             </AnimatePresence>
+          </div>
+
+          {/* Fixed bottom progress */}
+
+          <div
+            className="
+              absolute
+              bottom-0
+              left-0
+              right-0
+              flex
+              h-1
+            "
+          >
+            {testimonials.map((_, index) => (
+              <motion.span
+                key={index}
+                animate={{
+                  opacity: index === activeIndex ? 1 : 0.15,
+                }}
+                className="h-full flex-1"
+                style={{
+                  backgroundColor:
+                    index === activeIndex ? "#E63946" : "#3B0B12",
+                }}
+              />
+            ))}
           </div>
         </div>
 
@@ -183,9 +333,19 @@ export default function SectionSeven() {
             CONTROLS
         ============================================================ */}
 
-        <div className="mt-10 flex flex-col items-center gap-8">
+        <div className="mt-9 flex flex-col items-center gap-7">
           {/* Name navigation */}
-          <div className="flex max-w-4xl flex-wrap justify-center gap-x-6 gap-y-3">
+
+          <div
+            className="
+              flex
+              max-w-5xl
+              flex-wrap
+              justify-center
+              gap-x-5
+              gap-y-2.5
+            "
+          >
             {testimonials.map((testimonial, index) => {
               const isActive = index === activeIndex;
 
@@ -194,38 +354,83 @@ export default function SectionSeven() {
                   key={`${testimonial.name}-${index}`}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`relative py-1 text-[9px] font-medium uppercase tracking-[0.16em] transition-colors duration-300 ${
-                    isActive
-                      ? "text-[#7d1f2a]"
-                      : "text-[#8c6b45]/50 hover:text-[#59483a]"
-                  }`}
+                  className="
+                    relative
+                    py-1
+                    text-[8px]
+                    font-semibold
+                    uppercase
+                    tracking-[0.14em]
+                    transition-colors
+                    duration-300
+                  "
+                  style={{
+                    color: isActive ? "#E63946" : "rgba(59, 11, 18, 0.38)",
+                  }}
                 >
                   {testimonial.name}
 
                   <span
-                    className={`absolute -bottom-1 left-0 h-px bg-[#7d1f2a] transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      h-px
+                      transition-all
+                      duration-300
+                    "
+                    style={{
+                      width: isActive ? "100%" : "0%",
+                      backgroundColor: "#E63946",
+                    }}
                   />
                 </button>
               );
             })}
           </div>
 
-          {/* Arrow controls + counter */}
-          <div className="flex items-center gap-5">
+          {/* Arrow controls */}
+
+          <div className="flex items-center gap-4">
             <button
               type="button"
               onClick={previous}
               aria-label="Previous testimonial"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c6b45]/30 text-[#59483a] transition-all duration-300 hover:border-[#7d1f2a]/50 hover:text-[#7d1f2a]"
+              className="
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#3B0B12]/12
+                text-[#3B0B12]/60
+                transition-all
+                duration-300
+                hover:border-[#E63946]/50
+                hover:text-[#E63946]
+              "
             >
               <ArrowLeft size={15} strokeWidth={1.3} />
             </button>
 
-            <div className="min-w-17.5 text-center font-serif text-sm italic text-[#8c6b45]/65">
-              {String(activeIndex + 1).padStart(2, "0")}
-              <span className="mx-1 not-italic text-[#8c6b45]/30">/</span>
+            <div
+              className="
+                min-w-17.5
+                text-center
+                font-serif
+                text-sm
+                italic
+                text-[#3B0B12]/45
+              "
+            >
+              <span className="text-[#E63946]">
+                {String(activeIndex + 1).padStart(2, "0")}
+              </span>
+
+              <span className="mx-1 not-italic text-[#3B0B12]/20">/</span>
+
               {String(testimonials.length).padStart(2, "0")}
             </div>
 
@@ -233,7 +438,21 @@ export default function SectionSeven() {
               type="button"
               onClick={next}
               aria-label="Next testimonial"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#8c6b45]/30 text-[#59483a] transition-all duration-300 hover:border-[#7d1f2a]/50 hover:text-[#7d1f2a]"
+              className="
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#3B0B12]/12
+                text-[#3B0B12]/60
+                transition-all
+                duration-300
+                hover:border-[#E63946]/50
+                hover:text-[#E63946]
+              "
             >
               <ArrowRight size={15} strokeWidth={1.3} />
             </button>
@@ -251,9 +470,23 @@ export default function SectionSeven() {
           transition={{ duration: 1 }}
           className="mt-20 text-center"
         >
-          <div className="mx-auto mb-6 h-px w-12 bg-[#8c6b45]/35" />
+          <div className="mx-auto mb-6 flex items-center justify-center gap-2">
+            <span className="h-px w-8 bg-[#E63946]/40" />
 
-          <p className="font-serif text-xl italic text-[#59483a]/65">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F59E0B]" />
+
+            <span className="h-px w-8 bg-[#D94672]/40" />
+          </div>
+
+          <p
+            className="
+              font-serif
+              text-xl
+              italic
+              text-[#3B0B12]/60
+              sm:text-2xl
+            "
+          >
             The community speaks for itself.
           </p>
         </motion.div>

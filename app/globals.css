@@ -1,12 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffaf2;
+  --foreground: #3b0b12;
 
-  --kalpataru-maroon: #5c1f1f;
-  --kalpataru-cream: #f8f1e5;
-  --kalpataru-text: #573f34;
+  /* =========================================================
+KALPATARU — VIBRANT PALETTE
+========================================================= */
+
+  --kalpataru-red: #e63946;
+  --kalpataru-gold: #f59e0b;
+  --kalpataru-pink: #d94672;
+  --kalpataru-yellow: #ffd166;
+
+  /* Clean warm canvas */
+  --kalpataru-cream: #fffaf2;
+
+  /* Deep wine / text */
+  --kalpataru-text: #3b0b12;
+
+  /* Compatibility */
+  --kalpataru-maroon: #3b0b12;
 
   color-scheme: light;
 }
@@ -17,6 +31,13 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-kalpataru-red: var(--kalpataru-red);
+  --color-kalpataru-gold: var(--kalpataru-gold);
+  --color-kalpataru-pink: var(--kalpataru-pink);
+  --color-kalpataru-yellow: var(--kalpataru-yellow);
+  --color-kalpataru-cream: var(--kalpataru-cream);
+  --color-kalpataru-text: var(--kalpataru-text);
 }
 
 html {
@@ -31,40 +52,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* =========================================================
+TEXT SELECTION
+========================================================= */
+
 ::selection {
-  background: rgba(92, 31, 31, 0.15);
-  color: #5c1f1f;
+  background: rgba(230, 57, 70, 0.18);
+  color: var(--kalpataru-red);
 }
+
+/* =========================================================
+PAPER WORLD
+Clean, warm, neutral canvas.
+========================================================= */
 
 .paper-world {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 249, 231, 0.98) 0%,
-    rgba(247, 233, 201, 0.96) 45%,
-    rgba(191, 151, 91, 0.3) 100%
-  );
+  background: #fffaf2;
 }
 
-.paper-world::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background: linear-gradient(
-    to right,
-    rgba(155, 116, 72, 0.2),
-    rgba(196, 160, 107, 0.07) 10%,
-    transparent 18%,
-    transparent 82%,
-    rgba(196, 160, 107, 0.07) 90%,
-    rgba(155, 116, 72, 0.2)
-  );
-
-  z-index: 0;
-}
+/* =========================================================
+PAPER TEXTURE
+========================================================= */
 
 .paper-world::after {
   content: "";
@@ -72,7 +82,7 @@ body {
   inset: 0;
   pointer-events: none;
 
-  opacity: 0.16;
+  opacity: 0.1;
   mix-blend-mode: multiply;
 
   background-image: url("/paper-texture.png");
@@ -80,6 +90,10 @@ body {
 
   z-index: 0;
 }
+
+/* =========================================================
+SECTION LAYERING
+========================================================= */
 
 .paper-world > section {
   position: relative;
