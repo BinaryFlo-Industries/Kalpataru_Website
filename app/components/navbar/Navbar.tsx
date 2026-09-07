@@ -26,7 +26,7 @@ const navigation: NavItem[] = [
   },
   {
     label: "About",
-    href: "/about",
+    href: "/#community",
   },
   {
     label: "Social",
