@@ -10,9 +10,9 @@ const events = [
     href: "/events/durga-puja",
   },
   {
-    title: "Laxmi Puja",
-    description: "Our annual celebration of Maa Laxmi",
-    href: "/events/laxmi-puja",
+    title: "Lakshmi Puja",
+    description: "Our annual celebration of Maa Lakshmi",
+    href: "/events/lakshmi-puja",
   },
   {
     title: "Kali Puja",

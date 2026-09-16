@@ -53,9 +53,9 @@ const navigation: NavItem[] = [
         description: "Our annual celebration of Maa Durga",
       },
       {
-        label: "Laxmi Puja",
-        href: "/events/laxmi-puja",
-        description: "Our annual celebration of Maa Laxmi",
+        label: "Lakshmi Puja",
+        href: "/events/lakshmi-puja",
+        description: "Our annual celebration of Maa Lakshmi",
       },
       {
         label: "Kali Puja",

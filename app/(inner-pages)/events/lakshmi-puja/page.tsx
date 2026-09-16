@@ -1,9 +1,9 @@
 import Navbar from "@/app/components/navbar/Navbar";
-import SectionOne from "@/app/components/kali-puja/SectionOne";
-import SectionTwo from "@/app/components/kali-puja/SectionTwo";
-import SectionThree from "@/app/components/kali-puja/SectionThree";
-import SectionFour from "@/app/components/kali-puja/SectionFour";
-import SectionFive from "@/app/components/kali-puja/SectionFive";
+import SectionOne from "@/app/components/lakshmi-puja/SectionOne";
+import SectionTwo from "@/app/components/lakshmi-puja/SectionTwo";
+import SectionThree from "@/app/components/lakshmi-puja/SectionThree";
+import SectionFour from "@/app/components/lakshmi-puja/SectionFour";
+import SectionFive from "@/app/components/lakshmi-puja/SectionFive";
 import Footer from "@/app/components/footer/Footer";
 import EventSidebar from "@/app/components/EventsSidebar";
 
