@@ -25,12 +25,6 @@ const events = [
     href: "/events/saraswati-puja",
   },
   {
-    title: "Matri Bondona",
-    description:
-      "A cultural event that celebrates the bond between mothers and children",
-    href: "/events/matri-bondona",
-  },
-  {
     title: "Rong Milanti",
     description:
       "A cultural event that brings together the community for a night of fun and entertainment",
@@ -42,6 +36,12 @@ const events = [
       "A cultural event that celebrates the spirit of togetherness and community bonding",
     href: "/events/borsoboron",
     active: true,
+  },
+  {
+    title: "Picnic",
+    description:
+      "A fun-filled day of outdoor activities and bonding for the community",
+    href: "/events/picnic",
   },
 ];
 

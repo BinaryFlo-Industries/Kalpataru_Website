@@ -7,7 +7,7 @@ import SectionFive from "@/app/components/lakshmi-puja/SectionFive";
 import Footer from "@/app/components/footer/Footer";
 import EventSidebar from "@/app/components/EventsSidebar";
 
-export default function KaliPuja() {
+export default function LakshmiPuja() {
   return (
     <>
       <Navbar />

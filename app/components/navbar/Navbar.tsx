@@ -68,12 +68,6 @@ const navigation: NavItem[] = [
         description: "Our annual celebration of Maa Saraswati",
       },
       {
-        label: "Matri Bondona",
-        href: "/events/matri-bondona",
-        description:
-          "A cultural event that celebrates the bond between mothers and children",
-      },
-      {
         label: "Rong Milanti",
         href: "/events/rong-milanti",
         description:

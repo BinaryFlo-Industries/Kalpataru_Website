@@ -1,13 +1,12 @@
 import Navbar from "@/app/components/navbar/Navbar";
-import SectionOne from "@/app/components/rong-milanti/SectionOne";
-import SectionTwo from "@/app/components/rong-milanti/SectionTwo";
-import SectionThree from "@/app/components/rong-milanti/SectionThree";
-import SectionFour from "@/app/components/rong-milanti/SectionFour";
-import SectionFive from "@/app/components/rong-milanti/SectionFive";
+import SectionOne from "@/app/components/picnic/SectionOne";
+import SectionTwo from "@/app/components/picnic/SectionTwo";
+import SectionThree from "@/app/components/picnic/SectionThree";
+import SectionFour from "@/app/components/picnic/SectionFour";
 import Footer from "@/app/components/footer/Footer";
 import EventSidebar from "@/app/components/EventsSidebar";
 
-export default function RongMilanti() {
+export default function Picnic() {
   return (
     <>
       <Navbar />
@@ -22,7 +21,6 @@ export default function RongMilanti() {
             <SectionTwo />
             <SectionThree />
             <SectionFour />
-            <SectionFive />
           </main>
         </div>
       </div>
