@@ -5,6 +5,15 @@ import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 
+const getDaysUntilDurgaPuja = () => {
+  const today = new Date();
+  const durgaPuja = new Date("2026-10-20T00:00:00");
+
+  const diff = durgaPuja.getTime() - today.getTime();
+
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+};
+
 const festivals = [
   {
     name: "Durga Puja",
@@ -45,6 +54,8 @@ const festivals = [
 ];
 
 const SectionOne = () => {
+  const daysLeft = getDaysUntilDurgaPuja();
+
   return (
     <section
       id="hero"
@@ -350,51 +361,6 @@ const SectionOne = () => {
             xl:translate-x-0
           "
         >
-          {/* Header */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.8,
-            }}
-            className="
-              mb-4
-              flex
-              items-center
-              justify-between
-              px-2
-            "
-          >
-            <div className="flex items-center gap-2">
-              <span className="h-px w-7 bg-[#F59E0B]" />
-
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.28em]
-                  text-[#FFE7A3]
-                "
-              >
-                Celebrate with us
-              </span>
-            </div>
-
-            <span
-              className="
-                font-serif
-                text-sm
-                italic
-                text-[#FFD166]
-              "
-            >
-              2026
-            </span>
-          </motion.div>
-
           {/* =====================================================
               FESTIVAL CIRCLES
           ====================================================== */}
@@ -654,7 +620,9 @@ const SectionOne = () => {
                           text-[#FFE7A3]
                         "
                       >
-                        Our biggest celebration
+                        {daysLeft > 0
+                          ? `${daysLeft} days left`
+                          : "Our biggest celebration"}
                       </span>
                     </motion.div>
                   )}
