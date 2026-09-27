@@ -13,139 +13,236 @@ import {
 const SectionTwo = () => {
   const pujaDays = [
     {
+      bengali: "পঞ্চমী",
+      day: "Panchami",
+      date: "15 October 2026",
+      accent: "#D94672",
+      icon: Sparkles,
+      rituals: [
+        {
+          time: "8:00 PM",
+          title: "Maa Agomoni",
+        },
+      ],
+    },
+    {
       bengali: "ষষ্ঠী",
-      day: "Shashti",
+      day: "Maha Shashti",
       date: "16 October 2026",
       accent: "#E63946",
       icon: Sparkles,
       rituals: [
         {
-          title: "Kalparambha",
-          description: "Formal commencement of the Durga Puja rituals.",
+          time: "8:00 AM",
+          title: "Pujo",
         },
         {
-          title: "Bodhan",
-          description: "Ceremonial awakening and invocation of Maa Durga.",
+          time: "9:30 AM",
+          title: "Pushpanjali",
         },
         {
-          title: "Amantran",
-          description: "Formal invitation of the Goddess to the Puja.",
+          time: "8:00 PM",
+          title: "Devi Baran",
         },
         {
-          title: "Adhivas",
-          description: "Ritual consecration and establishment for the Puja.",
+          time: "8:30 PM",
+          title: "Cultural Program",
         },
       ],
     },
     {
       bengali: "সপ্তমী",
-      day: "Saptami",
-      date: "17–18 October 2026",
+      day: "Maha Saptami",
+      date: "17 October 2026",
       accent: "#F59E0B",
       icon: Flower2,
       rituals: [
         {
-          title: "Nabapatrika",
-          description:
-            "The ceremonial preparation and worship of the nine plants.",
+          time: "8:00 AM",
+          title: "Snan",
+          description: "Nava Patrika Pravesh",
         },
         {
-          title: "Kolabou",
-          description:
-            "The banana plant, traditionally known as Kola Bou, is ceremonially bathed and worshipped.",
+          time: "8:30 AM",
+          title: "Pujo",
         },
         {
-          title: "Saptami Puja",
-          description: "The principal worship and offerings of Saptami.",
+          time: "10:00 AM",
+          title: "Pushpanjali",
         },
         {
-          title: "Anjali & Bhog",
-          description:
-            "Devotees offer flowers and participate in the day's sacred offerings.",
+          time: "11:30 AM",
+          title: "Engagement Activities",
+        },
+        {
+          time: "1:00 PM - 3:00 PM",
+          title: "Bhog",
+        },
+        {
+          time: "7:00 PM",
+          title: "Sandhya Aarati",
+        },
+        {
+          time: "7:30 PM",
+          title: "Dhunuchi Dance",
+        },
+        {
+          time: "8:00 PM",
+          title: "Cultural Program",
         },
       ],
     },
     {
       bengali: "অষ্টমী",
-      day: "Ashtami",
-      date: "19 October 2026",
+      day: "Maha Ashtami",
+      date: "18 October 2026",
       accent: "#D94672",
       icon: Heart,
       rituals: [
         {
+          time: "8:30 AM",
+          title: "Maha Ashtami Pujo",
+        },
+        {
+          time: "10:00 AM",
           title: "Pushpanjali",
-          description: "The traditional morning floral offering to Maa Durga.",
         },
         {
-          title: "Kumari Puja",
-          description:
-            "A young girl is worshipped as an embodiment of the Divine Mother where the tradition is observed.",
+          time: "11:30 AM",
+          title: "Engagement Activities",
         },
         {
-          title: "Sandhi Puja",
-          description:
-            "The sacred ritual marking the transition between Ashtami and Navami.",
+          time: "1:00 PM - 3:00 PM",
+          title: "Bhog",
         },
         {
-          title: "108 Offerings",
-          description:
-            "The Sandhi Puja traditionally includes 108 lamps and 108 lotus offerings.",
+          time: "7:00 PM",
+          title: "Sandhya Aarati",
+        },
+        {
+          time: "7:30 PM",
+          title: "Dhunuchi Dance",
+        },
+        {
+          time: "8:00 PM",
+          title: "Cultural Program",
+        },
+      ],
+    },
+    {
+      bengali: "অষ্টমী",
+      day: "Maha Ashtami",
+      date: "19 October 2026",
+      subtitle: "Sandhi Pujo",
+      accent: "#E63946",
+      icon: Flame,
+      rituals: [
+        {
+          time: "5:39 AM",
+          title: "Pujo",
+        },
+        {
+          time: "6:00 AM",
+          title: "Pushpanjali",
+        },
+        {
+          time: "7:26 AM",
+          title: "Sandhi Pujo Starts",
+          description: "+ Balidan",
+        },
+        {
+          time: "8:14 AM",
+          title: "Sandhi Pujo Ends",
+        },
+        {
+          time: "8:30 AM",
+          title: "Pushpanjali",
+        },
+        {
+          time: "10:00 AM",
+          title: "Engagement Activities",
+        },
+        {
+          time: "1:00 PM - 3:00 PM",
+          title: "Bhog",
+        },
+        {
+          time: "7:00 PM",
+          title: "Sandhya Aarati",
+        },
+        {
+          time: "7:30 PM",
+          title: "Dhunuchi Dance",
+        },
+        {
+          time: "8:00 PM",
+          title: "Cultural Program",
         },
       ],
     },
     {
       bengali: "নবমী",
-      day: "Navami",
+      day: "Maha Navomi",
       date: "20 October 2026",
       accent: "#E63946",
       icon: Flame,
       rituals: [
         {
-          title: "Navami Puja",
-          description: "The worship and offerings continue on Navami.",
+          time: "6:00 AM",
+          title: "Maha Navami Pujo",
         },
         {
-          title: "Homa",
-          description:
-            "A sacred fire ritual performed as part of the day's observances.",
+          time: "8:00 AM",
+          title: "Pushpanjali",
         },
         {
+          time: "10:30 AM",
+          title: "Joggo",
+        },
+        {
+          time: "11:00 AM",
+          title: "Engagement Activities",
+        },
+        {
+          time: "1:00 PM - 3:00 PM",
+          title: "Bhog",
+        },
+        {
+          time: "7:00 PM",
+          title: "Sandhya Aarati",
+        },
+        {
+          time: "7:30 PM",
           title: "Dhunuchi Dance",
-          description:
-            "A beloved Bengali tradition accompanied by the rhythm of the dhak.",
         },
         {
-          title: "Arati",
-          description: "The ceremonial offering of light to Maa Durga.",
+          time: "8:00 PM",
+          title: "Cultural Program",
         },
       ],
     },
     {
       bengali: "দশমী",
-      day: "Dashami",
+      day: "Maha Dashomi",
       date: "21 October 2026",
       accent: "#F59E0B",
       icon: ArrowRight,
       rituals: [
         {
+          time: "8:00 AM",
           title: "Devi Baran",
-          description:
-            "The traditional ceremonial farewell offered to Maa Durga.",
         },
         {
+          time: "8:30 AM",
+          title: "Aparajita Pujo",
+        },
+        {
+          time: "10:30 AM",
           title: "Sindoor Khela",
-          description:
-            "A cherished Bengali Dashami tradition of vermilion and celebration.",
         },
         {
+          time: "2:30 PM",
           title: "Visarjan",
-          description:
-            "The ceremonial immersion of Maa Durga, marking the end of the Puja.",
-        },
-        {
-          title: "Bijoya",
-          description:
-            "The community comes together with greetings, sweets and the spirit of Bijoya.",
         },
       ],
     },
@@ -174,7 +271,7 @@ const SectionTwo = () => {
             </div>
 
             <h2 className="font-serif text-4xl leading-[0.96] tracking-[-0.04em] text-[#3B0B12] sm:text-5xl lg:text-6xl">
-              Five days,
+              Seven days,
               <br />
               <span className="italic">one celebration.</span>
             </h2>
@@ -189,8 +286,8 @@ const SectionTwo = () => {
           >
             <p className="text-base leading-8 text-[#3B0B12]/60 sm:text-lg">
               Follow the journey of Maa Durga through the traditional Bengali
-              Puja observances, from Bodhan on Shashti to Bijoya and Visarjan on
-              Dashami.
+              Puja observances, from Maa Agomoni on Panchami to Bijoya and
+              Visarjan on Dashami.
             </p>
           </motion.div>
         </div>
@@ -246,7 +343,7 @@ const SectionTwo = () => {
 
               return (
                 <motion.article
-                  key={day.day}
+                  key={`${day.date}-${day.day}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.12 }}
@@ -288,63 +385,83 @@ const SectionTwo = () => {
 
                     <div className="relative z-10 p-7 sm:p-9">
                       {/* Day heading */}
-                      <div className="flex flex-col gap-5 border-b border-[#3B0B12]/10 pb-7 sm:flex-row sm:items-end sm:justify-between">
-                        <div>
-                          <div className="flex items-center gap-3">
-                            <span
-                              className="text-[10px] font-bold uppercase tracking-[0.2em]"
-                              style={{ color: day.accent }}
-                            >
-                              Day {index + 1}
-                            </span>
+                      <div className="border-b border-[#3B0B12]/10 pb-7">
+                        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                          <div>
+                            <div className="flex flex-wrap items-center gap-3">
+                              <span
+                                className="text-[10px] font-bold uppercase tracking-[0.2em]"
+                                style={{ color: day.accent }}
+                              >
+                                Day {index + 1}
+                              </span>
 
-                            <span className="h-1 w-1 rounded-full bg-[#3B0B12]/20" />
+                              <span className="h-1 w-1 rounded-full bg-[#3B0B12]/20" />
 
-                            <span className="text-[10px] font-semibold uppercase tracking-[0.17em] text-[#3B0B12]/35">
-                              {day.date}
-                            </span>
+                              <span className="text-[10px] font-semibold uppercase tracking-[0.17em] text-[#3B0B12]/35">
+                                {day.date}
+                              </span>
+                            </div>
+
+                            <div className="mt-3 flex flex-wrap items-baseline gap-3">
+                              <h3 className="font-serif text-3xl tracking-[-0.03em] text-[#3B0B12] sm:text-4xl">
+                                {day.day}
+                              </h3>
+
+                              <span className="font-serif text-xl text-[#3B0B12]/25">
+                                {day.bengali}
+                              </span>
+
+                              {day.subtitle && (
+                                <>
+                                  <span className="h-1 w-1 rounded-full bg-[#3B0B12]/20" />
+
+                                  <span
+                                    className="font-serif text-lg italic"
+                                    style={{ color: day.accent }}
+                                  >
+                                    {day.subtitle}
+                                  </span>
+                                </>
+                              )}
+                            </div>
                           </div>
-
-                          <div className="mt-3 flex items-baseline gap-3">
-                            <h3 className="font-serif text-3xl tracking-[-0.03em] text-[#3B0B12] sm:text-4xl">
-                              {day.day}
-                            </h3>
-
-                            <span className="font-serif text-xl text-[#3B0B12]/25">
-                              {day.bengali}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Timing placeholder */}
-                        <div className="rounded-full border border-[#3B0B12]/10 bg-[#FFFDF8] px-4 py-2">
-                          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#3B0B12]/40">
-                            Timings to be announced
-                          </span>
                         </div>
                       </div>
 
-                      {/* Rituals */}
-                      <div className="mt-7 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                      {/* Schedule */}
+                      <div className="mt-7 grid gap-x-10 gap-y-5 sm:grid-cols-2">
                         {day.rituals.map((ritual) => (
-                          <div key={ritual.title} className="relative">
-                            <div className="flex items-start gap-3">
-                              <span
-                                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                          <div
+                            key={`${ritual.time}-${ritual.title}`}
+                            className="flex items-start gap-4"
+                          >
+                            {/* Time */}
+                            <div
+                              className="min-w-23 pt-0.5 text-[10px] font-bold uppercase tracking-[0.12em]"
+                              style={{ color: day.accent }}
+                            >
+                              {ritual.time}
+                            </div>
+
+                            {/* Event */}
+                            <div className="relative flex-1 border-l border-[#3B0B12]/10 pl-4">
+                              <div
+                                className="absolute -left-1 top-1.5 h-1.5 w-1.5 rounded-full"
                                 style={{
                                   backgroundColor: day.accent,
                                 }}
                               />
 
-                              <div>
-                                <h4 className="font-serif text-lg tracking-[-0.015em] text-[#3B0B12]">
-                                  {ritual.title}
-                                </h4>
+                              <h4 className="font-serif text-lg tracking-[-0.015em] text-[#3B0B12]">
+                                {ritual.title}
+                              </h4>
 
-                                <p className="mt-1.5 text-sm leading-6 text-[#3B0B12]/50">
+                              {ritual.description && (
+                                <p className="mt-1 text-sm leading-6 text-[#3B0B12]/50">
                                   {ritual.description}
                                 </p>
-                              </div>
+                              )}
                             </div>
                           </div>
                         ))}
@@ -366,12 +483,11 @@ const SectionTwo = () => {
           className="mt-12 flex flex-col gap-4 border-t border-[#3B0B12]/10 pt-7 sm:flex-row sm:items-center sm:justify-between"
         >
           <p className="max-w-2xl text-sm leading-7 text-[#3B0B12]/50">
-            Rituals and timings may vary according to the Bengali panjika and
-            the Puja tradition being followed.
+            Detailed Puja schedule and timings for Kalpataru Durga Puja 2026.
           </p>
 
           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#3B0B12]/30">
-            Shashti · Saptami · Ashtami · Navami · Dashami
+            Panchami · Shashti · Saptami · Ashtami · Navami · Dashami
           </span>
         </motion.div>
       </div>

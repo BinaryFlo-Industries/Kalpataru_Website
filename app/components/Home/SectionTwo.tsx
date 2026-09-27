@@ -9,41 +9,49 @@ const pujaDays = [
     date: "16",
     month: "OCT",
     day: "FRI",
-    title: "Kalparambha",
-    subtitle: "Akal Bodhon",
-    tag: "Opening",
+    title: "Maha Shashti",
+    subtitle: "Devi Baran",
+    tag: "The opening",
   },
   {
     date: "17",
     month: "OCT",
     day: "SAT",
-    title: "Saptami",
-    subtitle: "Nabapatrika Puja",
+    title: "Maha Saptami",
+    subtitle: "Nava Patrika Pravesh",
     tag: "The beginning",
+  },
+  {
+    date: "18",
+    month: "OCT",
+    day: "SUN",
+    title: "Maha Ashtami",
+    subtitle: "Maha Ashtami Pujo",
+    tag: "The sacred peak",
+    featured: true,
   },
   {
     date: "19",
     month: "OCT",
     day: "MON",
-    title: "Ashtami",
-    subtitle: "Sandhi Puja",
-    tag: "The sacred peak",
-    featured: true,
+    title: "Maha Ashtami",
+    subtitle: "Sandhi Pujo",
+    tag: "The sacred transition",
   },
   {
     date: "20",
     month: "OCT",
     day: "TUE",
-    title: "Navami",
-    subtitle: "Maha Navami",
+    title: "Maha Navami",
+    subtitle: "Maha Navami Pujo",
     tag: "The final prayer",
   },
   {
     date: "21",
     month: "OCT",
     day: "WED",
-    title: "Dashami",
-    subtitle: "Vijaya Dashami",
+    title: "Maha Dashami",
+    subtitle: "Visarjan",
     tag: "Farewell",
   },
 ];
@@ -139,8 +147,8 @@ export default function DurgaPujaSection() {
             className="lg:pb-3"
           >
             <p className="max-w-md text-sm leading-7 text-[#5A3038] sm:text-base sm:leading-8">
-              Five days of devotion, artistry and togetherness — a celebration
-              of Maa Durga and the cultural spirit that brings generations
+              Six days of devotion, artistry and togetherness — a celebration of
+              Maa Durga and the cultural spirit that brings generations
               together.
             </p>
 
@@ -157,7 +165,7 @@ export default function DurgaPujaSection() {
               <span className="hidden h-4 w-px bg-[#3B0B12]/15 sm:block" />
 
               <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#3B0B12]/45">
-                5 days
+                6 days
               </span>
             </div>
           </motion.div>
@@ -196,10 +204,10 @@ export default function DurgaPujaSection() {
         {/* =====================================================
         PUJA TIMELINE
     ====================================================== */}
-        <div className="mt-8 grid overflow-hidden border border-[#3B0B12]/10 bg-white/40 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid overflow-hidden border border-[#3B0B12]/10 bg-white/40 sm:grid-cols-2 lg:grid-cols-6">
           {pujaDays.map((puja, index) => (
             <motion.div
-              key={puja.title}
+              key={index}
               initial={{
                 opacity: 0,
                 y: 25,
