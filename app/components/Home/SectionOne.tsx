@@ -64,6 +64,80 @@ const SectionOne = () => {
         bg-[#180808]
       "
     >
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.8,
+        }}
+        className="
+    absolute
+    right-4
+    top-28
+    z-30
+    sm:right-6
+    sm:top-28
+    lg:right-8
+    lg:top-28
+  "
+      >
+        <div
+          className="
+      flex
+      items-center
+      gap-3
+      rounded-xl
+      border
+      border-[#F59E0B]/45
+      bg-[#8F101B]/80
+      px-4
+      py-2.5
+      shadow-[0_10px_35px_rgba(0,0,0,0.3)]
+      backdrop-blur-md
+    "
+        >
+          <span
+            className="
+        h-2
+        w-2
+        shrink-0
+        rounded-full
+        bg-[#F59E0B]
+        shadow-[0_0_12px_rgba(245,158,11,0.8)]
+      "
+          />
+
+          <div className="flex flex-col">
+            <span
+              className="
+          text-[8px]
+          font-semibold
+          uppercase
+          tracking-[0.2em]
+          text-[#FFE7A3]
+          sm:text-[9px]
+        "
+            >
+              Durga Puja
+            </span>
+
+            <span
+              className="
+          mt-0.5
+          font-serif
+          text-sm
+          italic
+          leading-none
+          text-white
+          sm:text-base
+        "
+            >
+              {daysLeft > 0 ? `${daysLeft} days left` : "Celebration is here"}
+            </span>
+          </div>
+        </div>
+      </motion.div>
       {/* =========================================================
           BACKGROUND VIDEO
       ========================================================== */}
@@ -579,53 +653,6 @@ const SectionOne = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* =================================================
-                      DURGA FEATURE LABEL
-                  ================================================== */}
-
-                  {festival.featured && (
-                    <motion.div
-                      animate={{
-                        y: [0, -3, 0],
-                      }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                      className="
-                        absolute
-                        -top-2
-                        sm:-top-3
-                        left-1/2
-                        -translate-x-1/2
-                        whitespace-nowrap
-                        rounded-full
-                        border
-                        border-[#F59E0B]/60
-                        bg-[#8F101B]
-                        px-3
-                        py-1
-                        shadow-[0_8px_25px_rgba(0,0,0,0.35)]
-                        hidden lg:block
-                      "
-                    >
-                      <span
-                        className="
-                          text-[8px]
-                          font-semibold
-                          uppercase
-                          tracking-[0.2em]
-                          text-[#FFE7A3]
-                        "
-                      >
-                        {daysLeft > 0
-                          ? `${daysLeft} days left`
-                          : "Our biggest celebration"}
-                      </span>
-                    </motion.div>
-                  )}
                 </Link>
 
                 {/* Desktop captions */}
